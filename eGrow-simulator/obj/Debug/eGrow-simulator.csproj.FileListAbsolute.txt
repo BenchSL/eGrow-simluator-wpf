@@ -103,3 +103,7 @@ C:\Users\Dino\Documents\GitHub\eGrow-simluator-wpf\eGrow-simulator\obj\Debug\eGr
 C:\Users\Dino\Documents\GitHub\eGrow-simluator-wpf\eGrow-simulator\obj\Debug\eGrow-simulator.csproj.GenerateResource.cache
 C:\Users\Dino\Documents\GitHub\eGrow-simluator-wpf\eGrow-simulator\obj\Debug\eGrow-simulator.csproj.CoreCompileInputs.cache
 C:\Users\Dino\Documents\GitHub\eGrow-simluator-wpf\eGrow-simulator\obj\Debug\eGrow-simulator.csproj.CopyComplete
+C:\Users\Dino\Documents\GitHub\eGrow-simluator-wpf\eGrow-simulator\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Dino\Documents\GitHub\eGrow-simluator-wpf\eGrow-simulator\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Dino\Documents\GitHub\eGrow-simluator-wpf\eGrow-simulator\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Dino\Documents\GitHub\eGrow-simluator-wpf\eGrow-simulator\bin\Debug\System.Net.Http.Formatting.xml

@@ -1,9 +1,10 @@
-﻿<Window x:Class="eGrow_simulator.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:eGrow_simulator"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="eGrow_simulator.MainWindow"
         mc:Ignorable="d"
         Title="eGrow" ResizeMode="NoResize" Height="450" Width="800">
     <Grid>
@@ -15,32 +16,63 @@
         </Grid.ColumnDefinitions>
 
         <!-- Background -->
+        <Ellipse HorizontalAlignment="Left" Height="150" Margin="-50,-60,0,0" Stroke="#E1E9CA" Fill="#E1E9CA" VerticalAlignment="Top" Width="220"/>
         <Rectangle HorizontalAlignment="Left" Height="40" Stroke="#E1E9CA" Fill="#E1E9CA" VerticalAlignment="Top" Width="800" Grid.ColumnSpan="2"/>
-        <Label Content="Control Panel" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Margin="5,4,0,0" Height="31" Width="112"/>
+        <Image Source="/Assets/eGrowLogotip.png" Margin="14,-11,284,326" />
 
 
         <!-- Column 1 -->
-        <Rectangle Name="SqrLight" HorizontalAlignment="Left" Height="39" Margin="11,47,0,0" StrokeThickness="3" Stroke="Black" VerticalAlignment="Top" Width="214"/>
-        <Label Content="Lučke" HorizontalAlignment="Left" Margin="12,54,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="49" Height="26"/>
-        <Label Name="LblLuckeStatus" Content="Off" HorizontalAlignment="Left" Margin="104,54,0,0" VerticalAlignment="Top" Foreground="Red" FontWeight="Bold" Height="26" Width="28"/>
+        <Label Grid.Column="1" Content="Nastavitve" HorizontalAlignment="Left" Margin="29,55,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
 
-        <Rectangle x:Name="SqrGrelec" HorizontalAlignment="Left" Height="39" Margin="11,91,0,0" StrokeThickness="3" Stroke="Black" VerticalAlignment="Top" Width="214"/>
-        <Label Content="Grelec" HorizontalAlignment="Left" Margin="12,98,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="49" Height="26"/>
-        <Label Name="LblGrelecStatus" Content="Off" HorizontalAlignment="Left" Margin="104,98,0,0" VerticalAlignment="Top" Foreground="Red" FontWeight="Bold" Height="26" Width="28"/>
+        <Image Source="/Assets/Pod/PodRastline.png" Margin="164,181,5,0" />
+        <Label Content="Temp. prsti:" HorizontalAlignment="Left" Margin="10,133,0,0" VerticalAlignment="Top"/>
+        <Label Content="Temp. prostora:" HorizontalAlignment="Left" Margin="10,159,0,0" VerticalAlignment="Top"/>
+        <Label Content="Vlažnost prsti:" HorizontalAlignment="Left" Margin="10,185,0,0" VerticalAlignment="Top"/>
+        <Label Content="Vlažnost prostora:" HorizontalAlignment="Left" Margin="10,211,0,0" VerticalAlignment="Top"/>
+        <Label Content="UV index:" HorizontalAlignment="Left" Margin="14,289,0,0" VerticalAlignment="Top"/>
+        <Label Content="Sončno sevanje:" HorizontalAlignment="Left" Margin="10,263,0,0" VerticalAlignment="Top"/>
+        <Label Content="Vlažnost listov:" HorizontalAlignment="Left" Margin="10,237,0,0" VerticalAlignment="Top"/>
+        <Label Content="Rast:" HorizontalAlignment="Left" Margin="14,315,0,0" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Content="Temparatura prsti:" HorizontalAlignment="Left" Margin="29,90,0,0" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Content="Temparatura prostora:" HorizontalAlignment="Left" Margin="29,116,0,0" VerticalAlignment="Top"/>
 
-        <Rectangle Name="sdsdsd" HorizontalAlignment="Left" Height="268" Margin="11,135,0,0" StrokeThickness="3" Stroke="Black" VerticalAlignment="Top" Width="214"/>
-        <Label Content="Podatki Rastline" HorizontalAlignment="Left" Margin="12,142,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="110" Height="26"/>
-
-        <Image Source="/Assets/Pod/PodRastline.png" Margin="208,171,351,10" Grid.ColumnSpan="2" />
-
-
+        <Label Name="LblTempPrsti" Content="" HorizontalAlignment="Left" Margin="75,133,0,0" VerticalAlignment="Top"/>
+        <Label Name="LblTempProstora" Content="" HorizontalAlignment="Left" Margin="97,159,0,0" VerticalAlignment="Top"/>
+        <Label Name="LblVlagaPrsti" Content="" HorizontalAlignment="Left" Margin="75,185,0,0" VerticalAlignment="Top"/>
+        <Label Name="LblVlagaProstora" Content="" HorizontalAlignment="Left" Margin="97,211,0,0" VerticalAlignment="Top"/>
+        <Label Name="LblUvIndex" Content="" HorizontalAlignment="Left" Margin="70,289,0,0" VerticalAlignment="Top"/>
+        <Label Name="LblSoncnoSevanje" Content="" HorizontalAlignment="Left" Margin="100,263,0,0" VerticalAlignment="Top"/>
+        <Label Name="LblVlagaListov" Content="" HorizontalAlignment="Left" Margin="93,237,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Name="LblRast" Content="" HorizontalAlignment="Left" Margin="45,315,0,0" VerticalAlignment="Top"/>
 
         <!-- Column 2 -->
-        <Button Grid.Column="1" Content="Simuliraj" HorizontalAlignment="Left" Margin="225,9,0,0" VerticalAlignment="Top" FontWeight="Normal" Height="22" Width="69" Click="BtnSimuliraj_Click"/>
+        <Button Grid.Column="1" x:Name="BtnSimuliraj" Content="Simuliraj" HorizontalAlignment="Left" Margin="225,9,0,0" VerticalAlignment="Top" FontWeight="Normal" Height="22" Width="69" Click="BtnSimuliraj_Click"/>
         <Button Grid.Column="1" Content="Zapri" HorizontalAlignment="Left" Margin="299,9,0,0" VerticalAlignment="Top" FontWeight="Normal" Height="22" Width="69" Click="BtnZapri_Click"/>
-        <Button Grid.Column="1" Content="Prižgi luč" HorizontalAlignment="Left" Margin="151,9,0,0" VerticalAlignment="Top" FontWeight="Normal" Height="22" Width="69" Click="BtnPrizgiLuc_Click"/>
-        <Label Grid.Column="1" Content="Funkcije:" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
-        <Button Grid.Column="1" Content="Prižgi grelec" HorizontalAlignment="Left" Margin="68,8,0,0" VerticalAlignment="Top" FontWeight="Normal" Height="22" Width="78" Click="BtnGrelec_Click"/>
+
+
+        <Label Content="Podatki Rastline" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+        <xctk:DoubleUpDown Name="InputTempPrst" Grid.Column="1" HorizontalAlignment="Left" Margin="134,93,0,0" VerticalAlignment="Top" Width="50"/>
+        <xctk:DoubleUpDown Name="InputTempProstora" Grid.Column="1" HorizontalAlignment="Left" Margin="156,119,0,0" VerticalAlignment="Top" Width="50"/>
+
+
+        <Label Content="Stanje:" HorizontalAlignment="Left" Margin="92,5,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Grid.Column="1"/>
+        <Label Name="LblStanjeSimulacije" Content="" HorizontalAlignment="Left" Margin="138,5,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Grid.Column="1"/>
+        <Button Grid.Column="1" x:Name="BtnShrani" Content="Shrani" HorizontalAlignment="Left" Margin="29,312,0,0" VerticalAlignment="Top" FontWeight="Normal" Height="22" Width="69" Click="BtnShrani_Click"/>
+        <Label Grid.Column="1" Content="Vlažnost prsti:" HorizontalAlignment="Left" Margin="29,142,0,0" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Content="Vlažnost prostora:" HorizontalAlignment="Left" Margin="29,168,0,0" VerticalAlignment="Top"/>
+        <xctk:IntegerUpDown Name="InputVlagaPrsti" Grid.Column="1" HorizontalAlignment="Left" Margin="113,145,0,0" VerticalAlignment="Top" Width="50"/>
+        <xctk:IntegerUpDown Name="InputVlagaProstora" Grid.Column="1" HorizontalAlignment="Left" Margin="134,171,0,0" VerticalAlignment="Top" Width="50"/>
+        <Label Grid.Column="1" Content="Dodaj gnojilo:" HorizontalAlignment="Left" Margin="29,194,0,0" VerticalAlignment="Top"/>
+        <xctk:IntegerUpDown Name="InputDodajGnojilo" Grid.Column="1" HorizontalAlignment="Left" Margin="113,197,0,0" VerticalAlignment="Top" Width="50"/>
+        <Label Grid.Column="1" Content="Čas gnojenja:" HorizontalAlignment="Left" Margin="29,220,0,0" VerticalAlignment="Top"/>
+
+        <xctk:TimePicker Grid.Column="1" Name="InputCasZalivanja" HorizontalAlignment="Left" Margin="107,223,0,0" VerticalAlignment="Top" Width="90"/>
+        <Label Grid.Column="1" Content="Dodaj vodo:" HorizontalAlignment="Left" Margin="29,246,0,0" VerticalAlignment="Top"/>
+        <xctk:IntegerUpDown Name="InputDodajVodo" Grid.Column="1" HorizontalAlignment="Left" Margin="103,249,0,0" VerticalAlignment="Top" Width="50"/>
+        <Label Grid.Column="1" Content="Čas zalivanja:" HorizontalAlignment="Left" Margin="29,272,0,0" VerticalAlignment="Top"/>
+        <xctk:TimePicker Grid.Column="1" HorizontalAlignment="Left" Margin="107,275,0,0" VerticalAlignment="Top" Width="90"/>
+
+
 
 
 
