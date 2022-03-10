@@ -20,21 +20,19 @@ namespace eGrow_simulator
     /// </summary>
     public partial class MainWindow : Window
     {
+        public bool PrizganaLucka = false;
+        public bool PrizganGrelec = false;
+
         public MainWindow()
         {
             InitializeComponent();
-            
 
+            LblGrelecStatus.Foreground = Brushes.Red;
+            LblLuckeStatus.Foreground = Brushes.Red;
+            LblGrelecStatus.Content = "Off";
+            LblLuckeStatus.Content = "Off";
 
-
-            //Na default sta lučka in grelec izklopljena (skrita) 
-            //Spodaj v kodi ju lahko primerno vklapljamo !
-            ImgPodGrelec.Visibility = Visibility.Hidden;
-            ImgPodLucke.Visibility = Visibility.Hidden;
         }
-
-
-
 
         private void BtnSimuliraj_Click(object sender, RoutedEventArgs e)
         {
@@ -46,6 +44,45 @@ namespace eGrow_simulator
         {//Zapiranje aplikacije
             Application.Current.Shutdown(); 
             this.Close();   
+        }
+
+        private void BtnPrizgiLuc_Click(object sender, RoutedEventArgs e)
+        {
+            if (PrizganaLucka == true)
+            {
+                LblLuckeStatus.Foreground = Brushes.Red;
+                LblLuckeStatus.Content = "Off";
+
+                PrizganaLucka = false;
+
+            }
+            else if (PrizganaLucka == false)
+            {
+                LblLuckeStatus.Foreground = Brushes.Green;
+                LblLuckeStatus.Content = "On";
+
+                PrizganaLucka = true;
+            }
+
+        }
+
+        private void BtnGrelec_Click(object sender, RoutedEventArgs e)
+        {
+            if (PrizganGrelec == true)
+            {
+                LblGrelecStatus.Foreground = Brushes.Red;
+                LblGrelecStatus.Content = "Off";
+
+                PrizganGrelec = false;
+
+            }
+            else if (PrizganGrelec == false)
+            {
+                LblGrelecStatus.Foreground = Brushes.Green;
+                LblGrelecStatus.Content = "On";
+
+                PrizganGrelec = true;
+            }
         }
     }
 }

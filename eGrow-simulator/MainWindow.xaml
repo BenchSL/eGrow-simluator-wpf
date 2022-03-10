@@ -8,21 +8,47 @@
         Title="eGrow" ResizeMode="NoResize" Height="450" Width="800">
     <Grid>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="330"/>
-            <ColumnDefinition Width="470"/>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="410"/>
+            <ColumnDefinition Width="390"/>
         </Grid.ColumnDefinitions>
-        
+
+        <!-- Background -->
+        <Rectangle HorizontalAlignment="Left" Height="40" Stroke="#E1E9CA" Fill="#E1E9CA" VerticalAlignment="Top" Width="800" Grid.ColumnSpan="2"/>
+        <Label Content="Control Panel" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Margin="5,4,0,0" Height="31" Width="112"/>
+
+
         <!-- Column 1 -->
-        <Image Source="/Resources/Pod.png" Name="ImgPodRastlina" Grid.Column="0" Margin="-10,0,8,0" />
-        <Image Source="/Resources/PodHeater.png" Name="ImgPodGrelec" Grid.Column="0" Margin="-10,0,8,0" />
-        <Image Source="/Resources/PodLights.png" Name="ImgPodLucke" Grid.Column="0" Margin="-10,0,8,0" />
+        <Rectangle Name="SqrLight" HorizontalAlignment="Left" Height="39" Margin="11,47,0,0" StrokeThickness="3" Stroke="Black" VerticalAlignment="Top" Width="214"/>
+        <Label Content="Lučke" HorizontalAlignment="Left" Margin="12,54,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="49" Height="26"/>
+        <Label Name="LblLuckeStatus" Content="Off" HorizontalAlignment="Left" Margin="104,54,0,0" VerticalAlignment="Top" Foreground="Red" FontWeight="Bold" Height="26" Width="28"/>
+
+        <Rectangle x:Name="SqrGrelec" HorizontalAlignment="Left" Height="39" Margin="11,91,0,0" StrokeThickness="3" Stroke="Black" VerticalAlignment="Top" Width="214"/>
+        <Label Content="Grelec" HorizontalAlignment="Left" Margin="12,98,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="49" Height="26"/>
+        <Label Name="LblGrelecStatus" Content="Off" HorizontalAlignment="Left" Margin="104,98,0,0" VerticalAlignment="Top" Foreground="Red" FontWeight="Bold" Height="26" Width="28"/>
+
+        <Rectangle Name="sdsdsd" HorizontalAlignment="Left" Height="268" Margin="11,135,0,0" StrokeThickness="3" Stroke="Black" VerticalAlignment="Top" Width="214"/>
+        <Label Content="Podatki Rastline" HorizontalAlignment="Left" Margin="12,142,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="110" Height="26"/>
+
+        <Image Source="/Assets/Pod/PodRastline.png" Margin="208,171,351,10" Grid.ColumnSpan="2" />
+
+
 
         <!-- Column 2 -->
-        <Label Grid.Column="1" Content="Control Panel" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
-        <Button Grid.Column="1" Content="Simuliraj" HorizontalAlignment="Left" Margin="292,383,0,0" VerticalAlignment="Top" FontWeight="Normal" Height="22" Width="69" Click="BtnSimuliraj_Click"/>
-        <Button Grid.Column="1" Content="Zapri" HorizontalAlignment="Left" Margin="366,383,0,0" VerticalAlignment="Top" FontWeight="Normal" Height="22" Width="69" Click="BtnZapri_Click"/>
+        <Button Grid.Column="1" Content="Simuliraj" HorizontalAlignment="Left" Margin="225,9,0,0" VerticalAlignment="Top" FontWeight="Normal" Height="22" Width="69" Click="BtnSimuliraj_Click"/>
+        <Button Grid.Column="1" Content="Zapri" HorizontalAlignment="Left" Margin="299,9,0,0" VerticalAlignment="Top" FontWeight="Normal" Height="22" Width="69" Click="BtnZapri_Click"/>
+        <Button Grid.Column="1" Content="Prižgi luč" HorizontalAlignment="Left" Margin="151,9,0,0" VerticalAlignment="Top" FontWeight="Normal" Height="22" Width="69" Click="BtnPrizgiLuc_Click"/>
+        <Label Grid.Column="1" Content="Funkcije:" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Button Grid.Column="1" Content="Prižgi grelec" HorizontalAlignment="Left" Margin="68,8,0,0" VerticalAlignment="Top" FontWeight="Normal" Height="22" Width="78" Click="BtnGrelec_Click"/>
+
+
+
+
+
+
+
+
 
     </Grid>
 
