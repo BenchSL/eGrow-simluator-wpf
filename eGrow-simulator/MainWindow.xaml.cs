@@ -23,6 +23,7 @@ namespace eGrow_simulator
         public MainWindow()
         {
             InitializeComponent();
+            
 
 
 
@@ -37,7 +38,8 @@ namespace eGrow_simulator
 
         private void BtnSimuliraj_Click(object sender, RoutedEventArgs e)
         {
-
+            RegLog hw = new RegLog();
+            hw.ShowDialog();
         }
 
         private void BtnZapri_Click(object sender, RoutedEventArgs e)

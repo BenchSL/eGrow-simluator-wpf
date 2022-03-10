@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\Tilen\Source\Repos\dingar321\eGrow-simluator-wpf\eGrow-simulator\obj\Debug\
+C:\Users\Tilen\Source\Repos\dingar321\eGrow-simluator-wpf\eGrow-simulator\obj\Release\
 eGrow_simulator
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\Tilen\Source\Repos\dingar321\eGrow-simluator-wpf\eGrow-simulator\App.xaml
 2-621098922
 
@@ -16,5 +16,5 @@ C:\Users\Tilen\Source\Repos\dingar321\eGrow-simluator-wpf\eGrow-simulator\App.xa
 18-510321274
 MainWindow.xaml;Home.xaml;
 
-False
+True
 
