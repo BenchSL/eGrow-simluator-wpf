@@ -176,12 +176,10 @@
     <Resource Include="Resources\userCat.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Pod\PodGrelec.png" />
-    <Resource Include="Assets\Pod\PodLucka.png" />
-    <Resource Include="Assets\Pod\PodRastline.png" />
+    <Resource Include="Assets\eGrowLogotip.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\eGrowLogotip.png" />
+    <Resource Include="Assets\Pod\Pod.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

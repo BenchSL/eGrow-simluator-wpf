@@ -48,14 +48,13 @@ namespace eGrow_simulator
         #region OnStartup funkcija
         public void OnStartup()
         {
-            client.BaseAddress = new Uri("https://localhost:44319/api/");
+            client.BaseAddress = new Uri("https://localhost:44319/");
             client.DefaultRequestHeaders.Accept.Clear();
 
             LblStanjeSimulacije.Content = "Offline";
             LblStanjeSimulacije.Foreground = Brushes.Red;
         }
         #endregion
-
 
         #region Simulacija (začetek/konec)
         private void BtnSimuliraj_Click(object sender, RoutedEventArgs e)
@@ -105,7 +104,7 @@ namespace eGrow_simulator
         #region Timer (Vsako sekundo se izvede)
         private async void OnTimerElapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
-            var Response = await client.GetStringAsync("SensorData/" + IdRastline);
+            var Response = await client.GetStringAsync("api/SensorData/" + IdRastline);
             SensorData = JsonConvert.DeserializeObject<SensorData>(Response);
             this.Dispatcher.Invoke(() =>
             {

@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/egrowlogotip.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/pod/pod.png")]
 
 
