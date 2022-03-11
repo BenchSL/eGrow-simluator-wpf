@@ -32,14 +32,20 @@
         <Label Content="Vlažnost listov:" HorizontalAlignment="Left" Margin="10,181,0,0" VerticalAlignment="Top" Height="26" Width="88"/>
         <Label Content="Rast:" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top" Height="26" Width="35"/>
 
-        <Label Name="LblTempPrsti" Content="" HorizontalAlignment="Left" Margin="81,77,0,0" VerticalAlignment="Top" Height="26" Width="10"/>
-        <Label Name="LblTempProstora" Content="" HorizontalAlignment="Left" Margin="102,103,0,0" VerticalAlignment="Top" Height="26" Width="10"/>
-        <Label Name="LblVlagaPrsti" Content="" HorizontalAlignment="Left" Margin="94,129,0,0" VerticalAlignment="Top" Height="26" Width="10"/>
-        <Label Name="LblVlagaProstora" Content="" HorizontalAlignment="Left" Margin="115,155,0,0" VerticalAlignment="Top" Height="26" Width="10"/>
-        <Label Name="LblUvIndex" Content="" HorizontalAlignment="Left" Margin="70,234,0,0" VerticalAlignment="Top" Height="26" Width="10"/>
-        <Label Name="LblSoncnoSevanje" Content="" HorizontalAlignment="Left" Margin="105,208,0,0" VerticalAlignment="Top" Height="26" Width="10"/>
-        <Label Name="LblVlagaListov" Content="" HorizontalAlignment="Left" Margin="98,181,0,0" VerticalAlignment="Top" Height="26" Width="10"/>
-        <Label Name="LblRast" Content="" HorizontalAlignment="Left" Margin="45,260,0,0" VerticalAlignment="Top" Height="26" Width="10"/>
+        <Label Name="LblTempPrsti" Content="" HorizontalAlignment="Left" Margin="81,77,0,0" VerticalAlignment="Top" Height="26" Width="150"/>
+        <Label Name="LblTempProstora" Content="" HorizontalAlignment="Left" Margin="102,103,0,0" VerticalAlignment="Top" Height="26" Width="150"/>
+        <Label Name="LblVlagaPrsti" Content="" HorizontalAlignment="Left" Margin="94,129,0,0" VerticalAlignment="Top" Height="26" Width="150"/>
+        <Label Name="LblVlagaProstora" Content="" HorizontalAlignment="Left" Margin="115,155,0,0" VerticalAlignment="Top" Height="26" Width="150"/>
+        <Label Name="LblUvIndex" Content="" HorizontalAlignment="Left" Margin="70,234,0,0" VerticalAlignment="Top" Height="26" Width="150"/>
+        <Label Name="LblSoncnoSevanje" Content="" HorizontalAlignment="Left" Margin="105,208,0,0" VerticalAlignment="Top" Height="26" Width="150"/>
+        <Label Name="LblVlagaListov" Content="" HorizontalAlignment="Left" Margin="98,181,0,0" VerticalAlignment="Top" Height="26" Width="150"/>
+        <Label Name="LblRast" Content="" HorizontalAlignment="Left" Margin="45,260,0,0" VerticalAlignment="Top" Height="26" Width="150"/>
+
+        <Label Content="Voda:" HorizontalAlignment="Left" Margin="10,314,0,0" VerticalAlignment="Top" Height="26" Width="42"/>
+        <Label Content="Gnojilo:" HorizontalAlignment="Left" Margin="10,340,0,0" VerticalAlignment="Top" Height="26" Width="52"/>
+
+        <Label Name="LblKolicinaVode" Content="" HorizontalAlignment="Left" Margin="52,314,0,0" VerticalAlignment="Top" Height="26" Width="150"/>
+        <Label Name="LblKolicinaGnojila" Content="" HorizontalAlignment="Left" Margin="62,340,0,0" VerticalAlignment="Top" Height="26" Width="150"/>
 
         <!-- Column 2 -->
         <Label Content="Stanje:" HorizontalAlignment="Left" Margin="14,4,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Height="29" Width="54" Grid.Column="1" />
@@ -56,16 +62,16 @@
         <Label Grid.Column="2" Content="Vlažnost prsti:" HorizontalAlignment="Left" Margin="10,129,0,0" VerticalAlignment="Top" Height="26" Width="84"/>
         <Label Grid.Column="2" Content="Vlažnost prostora:" HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top" Height="26" Width="106"/>
         <Label Grid.Column="2" Content="Dodaj gnojilo:" HorizontalAlignment="Left" Margin="10,178,0,0" VerticalAlignment="Top" Height="26" Width="84"/>
-        <Label Grid.Column="2" Content="Dodaj vodo:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Height="26" Width="74"/>
+        <Label Grid.Column="2" Content="Dodaj vodo:" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Center" Height="26" Width="74"/>
 
         <xctk:DoubleUpDown Name="InputTempPrst" Grid.Column="2" HorizontalAlignment="Left" Margin="116,80,0,0" VerticalAlignment="Top" Width="50" Height="20"/>
         <xctk:DoubleUpDown Name="InputTempProstora" Grid.Column="2" HorizontalAlignment="Left" Margin="138,106,0,0" VerticalAlignment="Top" Width="50" Height="20"/>
         <xctk:IntegerUpDown Name="InputVlagaPrsti" Grid.Column="2" HorizontalAlignment="Left" Margin="94,132,0,0" VerticalAlignment="Top" Width="50" Height="20"/>
         <xctk:IntegerUpDown Name="InputVlagaProstora" Grid.Column="2" HorizontalAlignment="Left" Margin="116,155,0,0" VerticalAlignment="Top" Width="50" Height="20"/>
         <xctk:IntegerUpDown Name="InputDodajGnojilo" Grid.Column="2" HorizontalAlignment="Left" Margin="94,182,0,0" VerticalAlignment="Top" Width="50" Height="20"/>
-        <xctk:IntegerUpDown Name="InputDodajVodo" Grid.Column="2" HorizontalAlignment="Left" Margin="84,0,0,0" VerticalAlignment="Center" Width="50" Height="20"/>
+        <xctk:IntegerUpDown Name="InputDodajVodo" Grid.Column="2" HorizontalAlignment="Left" Margin="84,22,0,0" VerticalAlignment="Center" Width="50" Height="20"/>
 
-        <Button Grid.Column="2" x:Name="BtnShrani" Content="Shrani" HorizontalAlignment="Left" Margin="10,244,0,0" VerticalAlignment="Top" FontWeight="Normal" Height="22" Width="70" Click="BtnShrani_Click"/>
+        <Button Grid.Column="2" x:Name="BtnShrani" Content="Shrani" HorizontalAlignment="Left" Margin="10,284,0,0" VerticalAlignment="Top" FontWeight="Normal" Height="22" Width="70" Click="BtnShrani_Click"/>
 
 
 

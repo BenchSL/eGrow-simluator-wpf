@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eGrow_simulator.Class
 {
-    public class SensorData
+    public class Senzor
     {
         public int SensorDataId { get; set; }
         public DateTime Timestamp { get; set; }
@@ -18,7 +18,5 @@ namespace eGrow_simulator.Class
         public int AmbientHumidityPercentage { get; set; }
         public int SoilHumidityPercentage { get; set; }
         public int GrowthCm { get; set; }
-        public string Decive { get; set; }
-        public string Plant { get; set; }
     }
 }

@@ -32,11 +32,18 @@ namespace eGrow_simulator
 
         //Preverja, če je simulacija aktivna
         public bool SimulacijaAktivna = false;
+        public bool Stopping = false;
 
-        //Shranjevanje dobljenih vrednosti
+        //Shranjevanje dobljenih vrednosti za senzor
         //(Konstantno updajtanje)
-        public SensorData SensorData;
+        public Senzor PodatkiSenzorja;
 
+        //Shranjevanje dobljenih vrednosti za napravoi
+        //(Konstantno updajtanje)
+        public Naprava PodatkiNaprave;
+
+        //Nastavljanje "timer" 
+        public System.Timers.Timer timer = new System.Timers.Timer();
 
         public MainWindow()
         {
@@ -59,34 +66,14 @@ namespace eGrow_simulator
         #region Simulacija (začetek/konec)
         private void BtnSimuliraj_Click(object sender, RoutedEventArgs e)
         {
-            //Nastavljanje "timer" 
-            var timer = new System.Timers.Timer();
             timer.Interval = 1000;
             timer.Elapsed += OnTimerElapsed;
 
             if (SimulacijaAktivna == true)
             {
-
-                timer.Stop();
-                timer.Enabled = false;
-
-                LblStanjeSimulacije.Content = "Offline";
-                LblStanjeSimulacije.Foreground = Brushes.Red;
-                BtnSimuliraj.Content = "Simuliraj";
-                SimulacijaAktivna = false;
-
-                LblTempPrsti.Content = "";
-                LblTempProstora.Content = "";
-                LblVlagaPrsti.Content = "";
-                LblVlagaProstora.Content = "";
-                LblUvIndex.Content = "";
-                LblSoncnoSevanje.Content = "";
-                LblVlagaListov.Content = "";
-                LblRast.Content = "";
-
-
+                Stopping = true;
             }
-            else if (SimulacijaAktivna == false)
+            if (SimulacijaAktivna == false)
             {
                 LblStanjeSimulacije.Content = "Online";
                 LblStanjeSimulacije.Foreground = Brushes.Green;
@@ -104,21 +91,37 @@ namespace eGrow_simulator
         #region Timer (Vsako sekundo se izvede)
         private async void OnTimerElapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
-            var Response = await client.GetStringAsync("api/SensorData/" + IdRastline);
-            SensorData = JsonConvert.DeserializeObject<SensorData>(Response);
+            var Response1 = await client.GetStringAsync("api/SensorData/" + IdRastline);
+            PodatkiSenzorja = JsonConvert.DeserializeObject<Senzor>(Response1);
+
+            var Response2 = await client.GetStringAsync("api/Device/" + IdRastline);
+            PodatkiNaprave = JsonConvert.DeserializeObject<Naprava>(Response2);
+
             this.Dispatcher.Invoke(() =>
             {
-                LblTempPrsti.Content = SensorData.SoiltemperatureCelsius + " °C".ToString();
-                LblTempProstora.Content = SensorData.AmbientTemperatureCelsius + " °C".ToString();
-                LblVlagaPrsti.Content = SensorData.SoilHumidityPercentage + " G.m -3".ToString();
-                LblVlagaProstora.Content = SensorData.AmbientHumidityPercentage + " G.m -3".ToString();
-                LblUvIndex.Content = SensorData.UvIndex + " nm".ToString();
-                LblSoncnoSevanje.Content = SensorData.SolarRadiation + " w/m²".ToString();
-                LblVlagaListov.Content = SensorData.LeafWetnes + " G.m -3".ToString();
-                LblRast.Content = SensorData.GrowthCm + " cm".ToString();
+                LblTempPrsti.Content = PodatkiSenzorja.SoiltemperatureCelsius + " °C".ToString();
+                LblTempProstora.Content = PodatkiSenzorja.AmbientTemperatureCelsius + " °C".ToString();
+                LblVlagaPrsti.Content = PodatkiSenzorja.SoilHumidityPercentage + " G.m -3".ToString();
+                LblVlagaProstora.Content = PodatkiSenzorja.AmbientHumidityPercentage + " G.m -3".ToString();
+                LblUvIndex.Content = PodatkiSenzorja.UvIndex + " nm".ToString();
+                LblSoncnoSevanje.Content = PodatkiSenzorja.SolarRadiation + " w/m²".ToString();
+                LblVlagaListov.Content = PodatkiSenzorja.LeafWetnes + " G.m -3".ToString();
+                LblRast.Content = PodatkiSenzorja.GrowthCm + " cm".ToString();
+
+                LblKolicinaVode.Content = PodatkiNaprave.RavenVodeRezorvarja + " ml".ToString();
+                LblKolicinaGnojila.Content = PodatkiNaprave.RavenGnojilaRezorvarja + " ml".ToString();
             });
 
+            if (Stopping == true)
+            {
 
+                SimulacijaAktivna = false;
+                Stopping = false;
+                timer.Stop();
+                timer.Enabled = false;
+
+
+            }
 
         }
         #endregion
@@ -132,22 +135,36 @@ namespace eGrow_simulator
         #endregion
 
         #region Shranjevanje nastavitev
-        private void BtnShrani_Click(object sender, RoutedEventArgs e)
+        private async void BtnShrani_Click(object sender, RoutedEventArgs e)
         {
-            if (double.TryParse(InputTempProstora.Value.ToString(), out double value1))
+            if (double.TryParse(InputTempPrst.Value.ToString(), out double value1))
             {
-                SensorData.AmbientTemperatureCelsius = value1;
+                PodatkiSenzorja.SoiltemperatureCelsius = (double)InputTempPrst.Value;
+            }
+            if (double.TryParse(InputTempProstora.Value.ToString(), out double value2))
+            {
+                PodatkiSenzorja.AmbientTemperatureCelsius = (double)InputTempProstora.Value;
+            }
+            if (double.TryParse(InputVlagaPrsti.Value.ToString(), out double value3))
+            {
+                PodatkiSenzorja.SoilHumidityPercentage = (int)InputVlagaPrsti.Value;
+            }
+            if (double.TryParse(InputVlagaProstora.Value.ToString(), out double value4))
+            {
+                PodatkiSenzorja.AmbientHumidityPercentage = (int)InputVlagaProstora.Value;
+            }
+            if (double.TryParse(InputDodajGnojilo.Value.ToString(), out double value5))
+            {
+                PodatkiNaprave.RavenGnojilaRezorvarja = PodatkiNaprave.RavenGnojilaRezorvarja + (int)InputDodajGnojilo.Value;
+            }
+            if (double.TryParse(InputDodajVodo.Value.ToString(), out double value6))
+            {
+                PodatkiNaprave.RavenVodeRezorvarja = PodatkiNaprave.RavenVodeRezorvarja +  (int)InputDodajVodo.Value;
             }
 
-            if (double.TryParse(InputTempPrst.Value.ToString(), out double value2))
-            {
+            await client.PutAsJsonAsync("api/SensorData/" + IdRastline, PodatkiSenzorja);
+            await client.PutAsJsonAsync("api/Device/" + IdRastline, PodatkiSenzorja);
 
-            }
-
-            //if (double.TryParse(InputUvIndex.Value.ToString(), out double value3))
-            //{
-
-            //}
         }
         #endregion
 

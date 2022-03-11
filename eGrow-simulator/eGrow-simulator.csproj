@@ -76,7 +76,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Class\SensorData.cs" />
+    <Compile Include="Class\Device.cs" />
+    <Compile Include="Class\Senzor.cs" />
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
@@ -124,56 +125,54 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Okna\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\eGrowLogotip.png">
+    <Resource Include="Assets\Resources\eGrowLogotip.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\HomePageLogoPlusBackground.png">
+    <Resource Include="Assets\Resources\HomePageLogoPlusBackground.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\klicaj.png">
+    <Resource Include="Assets\Resources\klicaj.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\light.png">
+    <Resource Include="Assets\Resources\light.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\LoginPageLogoPlusBackground.png">
+    <Resource Include="Assets\Resources\LoginPageLogoPlusBackground.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\plant.png">
+    <Resource Include="Assets\Resources\plant.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\plus.png">
+    <Resource Include="Assets\Resources\plus.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\RegisterPageLogoPlusBackground.png">
+    <Resource Include="Assets\Resources\RegisterPageLogoPlusBackground.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\stopinje.png">
+    <Resource Include="Assets\Resources\stopinje.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\water.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Pod.png">
+    <Resource Include="Assets\Resources\water.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\PodHeater.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\PodLights.png">
+    <Resource Include="Assets\Resources\Pod.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\userCat.png" />
+    <Resource Include="Assets\Resources\PodHeater.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Resources\PodLights.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Resources\userCat.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\eGrowLogotip.png" />
