@@ -1,9 +1,14 @@
 # eGrow-simluator-wpf
 
-Povezava, do vseh opravil, ki jih še moramo končati:
-https://app.asana.com/0/1201942110528161/board
+PROSIM PREBERI !!
 
-Glavno okno je uporabljeno kot "control panel" na desno stran bomo še dodali vnose za simulacijo. Dodati je še potreben vpis.
+Okno "MainWindow" je uporabljeno kot "nadzorna plošča". Na desni strani okna so vnosna polja, sredina vsebuje grafiko na levi strani so pa podatki rastline 
 
-Nameščena je še knjižnica "Extended WPF Toolkit" https://xceedsoftware.github.io/wpftoolkit/
-Dodana je še "Microsoft.AspNet.WebApi.Client" knmjižnica https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Client in "Newtonsoft.Json" https://www.nuget.org/packages/Newtonsoft.Json/
+
+Povezava do "Asana" managment orodja, ki vsebuje opravila za implementacijo 
+- https://app.asana.com/0/1201942110528161/board
+
+Nameščene knjižnice:
+- "Extended WPF Toolkit" https://xceedsoftware.github.io/wpftoolkit/
+- "Microsoft.AspNet.WebApi.Client" https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Client
+- "Newtonsoft.Json" https://www.nuget.org/packages/Newtonsoft.Json/
